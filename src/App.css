@@ -1,38 +1,142 @@
-.App {
+.nav{
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom-style: solid;
+  border-width: 2px;
+}
+
+.logo{
+    height: 50px;
+}
+
+.text1{
+  font-size: 20px;
+  color: #4E2A84;
+  border-color: black;
+  width: 33%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button1{
+  font-size: 14px;
+  height: 30px;
+  width: 50%;
+  border: 2px solid #4E2A84;
+  background-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text2{
+  margin-top: 10px;
+  margin-right: 5%;
+  font-size: 12px;
+  background-color: #E9E1EC;
+  height: 20px;
+  width: 70%;
+  text-align: center;
+  padding-top: 7px
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.organizer{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.title1{
+  padding-top: 10px;
+  font-size: 15px;
+  width: 25%;
+  color: #4E2A84;
+  border-color: black;
+  border-bottom: solid;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container1{
+  height: 400px;
+  display: grid;
+  margin-left: 10px;
+  grid-template-rows: 40px;
+  grid-template-columns: 24% 24% 24% 24%;
+  gap: 1%;
 }
+
+.profile{
+  font-size: 15px;
+}
+
+.verysmallimg{
+  width: 9px; 
+  height: auto;
+}
+
+.text4{
+  font-size: 10px;
+}
+
+.filters{
+  padding-top: 50px;
+  height: 250px;
+  background-color:#E9E1EC;
+  font-size: 12px;
+}
+
+.button3{
+  margin-top: 15px;
+  font-size: 14px;
+  height: 30px;
+  width: 100%;
+  border: 2px solid #4E2A84;
+  background-color: white;
+}
+
+.footer{
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-top-style: solid;
+  border-width: 2px;
+  gap: 10px;
+}
+
+.button2{
+  font-size: 20px;
+  color: #4E2A84;
+  border: none;
+  background: none;
+  width: 25%;
+  text-align: center;
+}
+
+.smallimg{
+   width: 15px; 
+   height: auto;
+}
+
+.text3{
+  font-size: 13px;
+}
+
+.centerimg{
+  width: 15px; 
+  height: auto;
+  margin: auto;  
+  display: block;
+}
+
+.img{
+  width: 100%;
+  margin-top: 10px;
+}
+
+* {
+  font-family: Verdana;
+}
+
