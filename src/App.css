@@ -1,8 +1,8 @@
-.nav{
+.App-header{
   height: 60px;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 300px;
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
@@ -10,7 +10,7 @@
   border-width: 2px;
 }
 
-.logo{
+.App-logo{
     height: 50px;
 }
 
@@ -65,13 +65,23 @@
   gap: 1%;
 }
 
-.profile{
+.profStyle{
+  width: 300px;
   font-size: 15px;
+  margin-left: 15px;
+  margin-top: 10px;
 }
 
-.verysmallimg{
-  width: 9px; 
-  height: auto;
+.profs{
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.smallimg{
+  margin-left: 5px;
+  width: 15px; 
+  height: 15px;
 }
 
 .text4{
@@ -115,12 +125,7 @@
   text-align: center;
 }
 
-.smallimg{
-   width: 15px; 
-   height: auto;
-}
-
-.text3{
+.bioStyle{
   font-size: 13px;
 }
 
@@ -131,8 +136,8 @@
   display: block;
 }
 
-.img{
-  width: 100%;
+.imgStyle{
+  width: 100px;
   margin-top: 10px;
 }
 
