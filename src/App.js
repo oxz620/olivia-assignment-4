@@ -101,7 +101,7 @@ const Profiles = () => {
   }
 
   return (
-    <div className="profStyle">
+    <div className="user-container">
       {users.map((user) => (
         <div key={user.id} className="user-card">
           <h2>
@@ -110,7 +110,7 @@ const Profiles = () => {
           <Like />
           <br></br>
           <img
-              src={user.profilePicture}
+              src={user.profilepicture}
               alt={`${user.firstName} ${user.lastName}`}
               className="user-image"
             />
