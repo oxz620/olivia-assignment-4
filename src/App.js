@@ -20,16 +20,8 @@ export default function App() {
 const Layout = () => {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/profiles">Profiles</Link>
-          </li>
-          <li>
-            <Link to="/Saved">Saved Profiles</Link>
-          </li>
-        </ul>
-      </nav>
+    <NavBar />
+      
       <Outlet />
     </>
   )
@@ -38,7 +30,7 @@ const Layout = () => {
 const Saved=()=> {
   return (
     <div>
-      <NavBar />
+      Hi! This will one day display all the saved (liked) profiles.
     </div>
   )
 }
@@ -51,10 +43,13 @@ function NavBar(){
   return(
   <header className="header">
         <img src="https://i.postimg.cc/SxLbLPpf/Screenshot-2024-12-19-at-3-04-09-PM.png" className="logo" alt="Logo" />
-          <div className="text1">
-          Find New Friends
-          </div>
-          <div className="text1">
+        <div className="nav-text">
+          <Link to="/profiles" className="nav-link">Profiles</Link>
+        </div>
+        <div className="nav-text">
+          <Link to="/saved" className="nav-link">Saved Profiles</Link>
+        </div>
+          <div className="nav-text">
           <button className="button1">
           LOG OUT
           </button>
@@ -94,7 +89,7 @@ const Profiles = () => {
         }
       }
       fetchUsers();
-      })
+      },[]);
 
   if (!users.length) {
     return <div>No users found.</div>;
