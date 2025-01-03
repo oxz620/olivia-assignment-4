@@ -72,7 +72,7 @@
   margin-top: 10px;
 }
 
-.profs{
+.user-card{
   width: 1000px;
   display: flex;
   flex-wrap: wrap;
@@ -125,8 +125,12 @@
   text-align: center;
 }
 
-.bioStyle{
-  font-size: 13px;
+.p{
+  font-size: 15px;
+}
+
+.h2{
+  font-size: 20px;
 }
 
 .centerimg{
@@ -136,7 +140,7 @@
   display: block;
 }
 
-.imgStyle{
+.user-image{
   width: 100px;
   margin-top: 10px;
 }
