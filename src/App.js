@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
-import Home from "./pages/Home";
 import Profiles from "./pages/Profiles";
 import Saved from "./pages/Saved";
 import NoPage from "./pages/NoPage";
@@ -13,7 +12,6 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
           <Route path="Profiles" element={<Profiles />} />
           <Route path="Saved Profiles" element={<Saved />} />
           <Route path="*" element={<NoPage />} />
@@ -29,9 +27,6 @@ const Layout = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
             <Link to="/profiles">Profiles</Link>
           </li>
           <li>
@@ -44,7 +39,7 @@ const Layout = () => {
   )
 };
 
-const Home=()=> {
+const Profiles=()=> {
   return (
     <div>
       <NavBar />
