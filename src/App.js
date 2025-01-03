@@ -1,10 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
+import { Outlet, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Profiles from "./pages/Profiles";
+import Saved from "./pages/Saved";
+import NoPage from "./pages/NoPage";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="Profiles" element={<Profiles />} />
+          <Route path="Saved Profiles" element={<Saved />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+const Layout = () => {
+  return (
+    <>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/profiles">Profiles</Link>
+          </li>
+          <li>
+            <Link to="/Saved">Saved Profiles</Link>
+          </li>
+        </ul>
+      </nav>
+      <Outlet />
+    </>
+  )
+};
+
+const Home=()=> {
+  return (
+    <div>
       <NavBar />
       <div class="profs">
         <Profile name="Sadie Wang" src="https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" alt="Photo of Sadie" bio="heyyy i'm a journalism major and a freshman. hoping to meet people to go out with and maybe motivate me to go on runs!" />
@@ -23,8 +65,8 @@ function App() {
 
 function NavBar(){
   return(
-  <header className="App-header">
-        <img src="https://i.postimg.cc/SxLbLPpf/Screenshot-2024-12-19-at-3-04-09-PM.png" className="App-logo" alt="Logo" />
+  <header className="header">
+        <img src="https://i.postimg.cc/SxLbLPpf/Screenshot-2024-12-19-at-3-04-09-PM.png" className="logo" alt="Logo" />
           <div class="text1">
           Find New Friends
           </div>
@@ -52,19 +94,25 @@ function Profile(props){
 
 
 function Like(){
-  const [selected, setSelected] = useState('https://www.svgrepo.com/show/391884/heart-empty.svg')
-  
+  const [liked, setLiked] = useState(false);
+
+  const toggleLike =() => {
+    setLiked(!liked);
+  }
   useEffect(() => {
     console.log("runs every render")
   })
   return(
     <>
-        <img src={selected} alt='heart' class="smallimg"/>
-        <button onClick={() => setSelected('https://cdn-icons-png.freepik.com/512/7795/7795378.png')}>  Save Profile</button>
+        <img src={
+          liked
+          ? 'https://cdn-icons-png.freepik.com/512/7795/7795378.png'
+          : 'https://www.svgrepo.com/show/391884/heart-empty.svg'
+        } 
+        alt='heart' class="smallimg"/>
+        <button onClick={toggleLike}>
+          {liked ? 'Unsave Profile' : 'Save Profile'}
+        </button>
     </>
   )
 }
-
-
-
-export default App;
