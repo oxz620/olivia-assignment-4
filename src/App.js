@@ -57,16 +57,15 @@ function NavBar(){
   </header>
   )
 }
-
-const API_URL = 'https://disc-assignment-5-users-api.onrender.com/api/users';
+const PORT= process.env.PORT || 5432;
 
 async function getAllUsers() {
   try {
-    const response = await fetch(API_URL);  // Send GET request to API endpoint
+    const response = await fetch(`http://localhost:${PORT}/users`);  
     if (!response.ok) {
       throw new Error('Failed to fetch users');
     }
-    const users = await response.json();  // Parse the response to JSON
+    const users = await response.json();  
     return users;
   } catch (error) {
     console.error('Error fetching users:', error);
@@ -79,11 +78,9 @@ const Profiles = () => {
   useEffect(() => {
       const fetchUsers =async () => {
         const usersArray=await getAllUsers();
-        console.log('Fetched Users:', usersArray); // Log the response to check data
-
-        // Check if the response is an array
+        console.log('Fetched Users:', usersArray); 
         if (Array.isArray(usersArray)) {
-          setUsers(usersArray); // Store the fetched users in state
+          setUsers(usersArray); 
         } else {
           throw new Error('Response is not an array');
         }
@@ -100,13 +97,13 @@ const Profiles = () => {
       {users.map((user) => (
         <div key={user.id} className="user-card">
           <h2>
-              {user.firstname} {user.lastname}
+              {user.first_name} {user.last_name}
           </h2>
           <Like />
           <br></br>
           <img
               src={user.profilepicture}
-              alt={`${user.firstName} ${user.lastName}`}
+              alt={`${user.first_name} ${user.last_name}`}
               className="user-image"
             />
           <p>Bio: {user.bio}</p>
