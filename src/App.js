@@ -57,7 +57,6 @@ function NavBar(){
   </header>
   )
 }
-
 const PORT= process.env.PORT || 5432;
 
 async function getAllUsers() {
